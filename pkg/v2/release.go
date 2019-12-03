@@ -139,6 +139,7 @@ func getReleases(retOpts RetrieveOptions) ([]*rls.Release, error) {
 		secrets, err := clientSet.CoreV1().Secrets(retOpts.TillerNamespace).List(metav1.ListOptions{
 			LabelSelector: retOpts.TillerLabel,
 		})
+		fmt.Println(retOpts.TillerLabel)
 		if err != nil {
 			return nil, err
 		}
